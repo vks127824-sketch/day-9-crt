@@ -1,0 +1,40 @@
+//problem-- 1\
+// function overriding 
+// sam function nmae -- sme parameters -- diffrerence classes;
+#include<iostream>
+using namespace std;
+class Application {
+    public :
+    virtual void turnOn() {
+        cout << "Application is getting turn on... " <<"\n";
+    }
+    virtual void work() = 0; 
+};
+class Fan : public Application {
+    public :
+    void turnOn() override {
+        cout << "Fan vlades are moving slowly..." <<"\n";
+    }
+    public :
+    void work() {
+        cout << "Once fan starts at  full speed it gives cool air..." <<"\n";
+    }
+};
+class Toaster : public Application {
+    public :
+    void work(){
+        cout <<"Toaster is heating up the breads..." <<"\n";
+    }
+};
+int main(){
+    Fan myfan ;
+    Application* kitchanApp;
+    kitchanApp = &myfan;
+    kitchanApp->turnOn();
+    kitchanApp->work();
+    
+    Toaster myToast;
+    kitchanApp = &myToast;
+    kitchanApp->turnOn();
+    kitchanApp->work();
+}
