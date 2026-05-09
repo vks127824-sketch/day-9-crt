@@ -1,0 +1,28 @@
+//problem--4 // memory search
+
+#include<iostream>
+using namespace std;
+
+int main() {
+
+    int arr[5] = {10, 202, 30, 40, 50};
+    int searchelement;
+
+    cout << "Enter element to search: ";
+    cin >> searchelement;
+
+    for (int i = 0; i < 5; i++) {
+
+        if (arr[i] == searchelement) {
+
+            cout << "Element is present at index = " << i << endl;
+            cout << "Memory address of element = " << &arr[i] << endl;
+
+            return 0;
+        }
+    }
+
+    cout << "Element not found";
+
+    return 0;
+}
